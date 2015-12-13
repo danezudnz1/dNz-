@@ -1,16 +1,593 @@
 <!DOCTYPE html>
 <html ng-app="blog">
 <head>
-  <title>My application</title>
+  <title>Just a static list</title>
   <link rel="stylesheet" media="all" href="css/bootstrap.min.css">
   <link rel="stylesheet" media="all" href="css/custom.css">
 </head>
 <body>
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="">AWJ Base Project</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#laptop">Laptop</a></li>
+            <li><a href="#telefon">Telefon</a></li>
+	    <li><a href="#student">Student</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <hr/>
 
   <div class="container">
     <div ng-controller="HomeController">
       <h1>{{ helloWorld }}</h1>
+      <p>Writing this live into the browser...</p>
     </div>
+  </div>
+
+  <hr/>
+
+  <!-- /resources1 -->
+  <div class="container">
+    <a name="laptop">
+    <h1>Laptop</h1>
+    <h2>List all resources</h2>
+    <table class="table table-bordered">
+      <tr>
+        <th>Model</th>
+        <th>Marca</th>
+        <th>Culoare</th>
+        <th>Procesor</th>
+        <th style="width:210px;">Options</th>
+      </tr>
+      <tr>
+        <td>GL555XZ</td>
+        <td>ASUS</td>
+        <td>Negru</td>
+        <td>4720HQ</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>XL54221</td>
+        <td>ASUS</td>
+        <td>Gri</td>
+        <td>4521U</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>G500</td>
+        <td>Lenovo</td>
+        <td>Rosu</td>
+        <td>3352H</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Del</td>
+        <td>D356</td>
+        <td>Albastru</td>
+        <td>2543HQ</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Edit LAPTOP</h2>
+        <form action="" method="">
+          <div class="form-group">
+            <label for="attribute1">Model</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Model">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Marca</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Marca">
+          </div>
+          <div class="form-group">
+            <label for="attribute3">Culoare</label>
+            <input type="text" class="form-control" id="attribute3" placeholder="Culoare">
+          </div>
+          <div class="form-group">
+            <label for="attribute4">Procesor</label>
+            <input type="text" class="form-control" id="attribute4" placeholder="Procesor">
+          </div>
+          <button type="submit" class="btn btn-info">Save</button>
+        </form>
+      </div>
+
+
+      <div class="col-md-3 col-md-offset-6">
+        <h2>Add LAPTOP</h2>
+        <form action="" method="">
+          <div class="form-group">
+            <label for="attribute1">Model</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Model">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Marca</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Marca">
+          </div>
+          <div class="form-group">
+            <label for="attribute3">Culoare</label>
+            <input type="text" class="form-control" id="attribute3" placeholder="Culoare">
+          </div>
+          <div class="form-group">
+            <label for="attribute4">Procesor</label>
+            <input type="text" class="form-control" id="attribute4" placeholder="Procesor">
+          </div>
+          <button type="submit" class="btn btn-success">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Show LAPTOP</h2>
+      </div>
+      <div class="col-md-2">
+        <img src="http://lorempixel.com/200/200/technics/?id=1" class="img-thumbnail"/>
+      </div>
+      <div class="col-md-10">
+        <h1>Componente</h1>
+        <p>RAM,Placa video</p>
+        <h3>Sub resource</h3>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Scor Benchmark</th>
+            <th>Garantie</th>
+          </tr>
+          <tr>
+            <td>3500</td>
+            <td>3 ani</td>
+          </tr>
+          <tr>
+            <td>2432</td>
+            <td>2 ani</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <!-- /resources2-->
+  <div class="container">
+    <a name="telefon">
+    <h1>Telefon</h1>
+    <h2>List all resources</h2>
+    <table class="table table-bordered">
+      <tr>
+        <th>Model</th>
+        <th>Marca</th>
+        <th style="width:210px;">Options</th>
+      </tr>
+      <tr>
+        <td>I-9505</td>
+        <td>Samsung</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>G900F</td>
+        <td>Samsung</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>M9</td>
+        <td>HTC</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Z3</td>
+        <td>Sony</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Edit Telefon</h2>
+        <form action="" method="">
+          <div class="form-group">
+            <label for="attribute1">Model</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Attribute 1">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Marca</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Attribute 2">
+          </div>
+          <button type="submit" class="btn btn-info">Save</button>
+        </form>
+      </div>
+
+
+      <div class="col-md-3 col-md-offset-6">
+        <h2>Add Telefon</h2>
+        <form action="" method="">
+          <div class="form-group">
+            <label for="attribute1">Model</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Attribute 1">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">Marca</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Attribute 2">
+          </div>
+          <button type="submit" class="btn btn-success">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Show Telefon</h2>
+      </div>
+      <div class="col-md-2">
+        <img src="http://lorempixel.com/200/200/technics/?id=2" class="img-thumbnail"/>
+      </div>
+      <div class="col-md-10">
+        <h1>Componente</h1>
+        <p>RAM, Frecventa procesor</p>
+        <h3>Sub resource</h3>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Score Antutu</th>
+            <th>Garantie</th>
+          </tr>
+          <tr>
+            <td>1400</td>
+            <td>2 ani</td>
+          </tr>
+          <tr>
+            <td>27000</td>
+            <td>3 ani</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <a name="student">
+    <h1>Student</h1>
+    <h2>List all resources</h2>
+    <table class="table table-bordered">
+      <tr>
+        <th>Nume</th>
+        <th>ID</th>
+        <th style="width:210px;">Options</th>
+      </tr>
+      <tr>
+        <td>Ghita</td>
+        <td>1</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Tanase</td>
+        <td>2</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Colenati</td>
+        <td>3</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Dumitru</td>
+        <td>4</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Open
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Edit
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Remove
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Edit Student</h2>
+        <form action="" method="">
+          <div class="form-group">
+            <label for="attribute1">Nume</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Attribute 1">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">ID</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Attribute 2">
+          </div>
+          <button type="submit" class="btn btn-info">Save</button>
+        </form>
+      </div>
+
+
+      <div class="col-md-3 col-md-offset-6">
+        <h2>Add Telefon</h2>
+        <form action="" method="">
+          <div class="form-group">
+            <label for="attribute1">Nume</label>
+            <input type="text" class="form-control" id="attribute1" placeholder="Attribute 1">
+          </div>
+          <div class="form-group">
+            <label for="attribute2">ID</label>
+            <input type="text" class="form-control" id="attribute2" placeholder="Attribute 2">
+          </div>
+          <button type="submit" class="btn btn-success">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Show Telefon</h2>
+      </div>
+      <div class="col-md-2">
+        <img src="http://lorempixel.com/200/200/technics/?id=2" class="img-thumbnail"/>
+      </div>
+      <div class="col-md-10">
+        <h1>Situatie</h1>
+        <p>Nota, Nr restante</p>
+        <h3>Sub resource</h3>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Prenume</th>
+            <th>Initiala tata</th>
+          </tr>
+          <tr>
+            <td>Dan</td>
+            <td>I</td>
+          </tr>
+          <tr>
+            <td>Ion</td>
+            <td>G</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="container">
+    <footer class="footer">
+      <p class="text-muted pull-left">AWJ Base Project &copy; 2015-2016</p>
+      <p class="text-muted pull-right">Copenhagen Robert-Marius, 333AA</p>
+    </footer>
   </div>
 
   <script src="js/jquery-1.11.3.min.js"></script>
