@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;//addd
 import java.util.List;
 import java.util.ArrayList;
 
@@ -26,18 +27,12 @@ public class LaptopController {
     laptopuri.add(l3);
   }
 
-  @RequestMapping(value="/Laptop", method = RequestMethod.GET)
+  @RequestMapping(value="/laptop", method = RequestMethod.GET)
   public List<Laptop> index() {
     return this.laptopuri;
   }
-  
-  @RequestMapping(value="/Laptop", method = RequestMethod.POST)
-  public ResponseEntity create() {
-	  Laptop l4 = new Laptop(4, "Asus");
-	  return new ResponseEntity<Laptop>(l4, new HttpHeaders(), HttpStatus.OK);
-  }
 
-  @RequestMapping(value="/Laptop/{id}", method = RequestMethod.PUT)
+  @RequestMapping(value="/laptop/{id}", method = RequestMethod.PUT)
   public ResponseEntity update(@PathVariable("id") int id) {
     for(Laptop l : this.laptopuri) {
       if(l.getId() == id) {
@@ -49,7 +44,7 @@ public class LaptopController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
   
-  @RequestMapping(value="/Laptop/{id}", method = RequestMethod.GET)
+  @RequestMapping(value="/laptop/{id}", method = RequestMethod.GET)
   public ResponseEntity show(@PathVariable("id") int id) {
     for(Laptop l : this.laptopuri) {
       if(l.getId() == id) {
@@ -59,7 +54,19 @@ public class LaptopController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
 
-  @RequestMapping(value="/Laptop/{id}", method = RequestMethod.DELETE)
+@RequestMapping(value="/laptop", method = RequestMethod.POST)
+ 
+ public ResponseEntity create(@RequestBody Laptop l) {
+   
+ this.laptopuri.add(l);
+	
+return new ResponseEntity<List<Laptop>>(this.laptopuri, new HttpHeaders(), HttpStatus.OK);
+ 
+ }
+
+
+
+  @RequestMapping(value="/laptop/{id}", method = RequestMethod.DELETE)
   public ResponseEntity remove(@PathVariable("id") int id) {
     for(Laptop l : this.laptopuri) {
       if(l.getId() == id) {

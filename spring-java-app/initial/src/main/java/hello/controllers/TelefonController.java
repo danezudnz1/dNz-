@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*; //de pus
 import java.util.List;
 import java.util.ArrayList;
 
@@ -26,18 +27,18 @@ public class TelefonController {
     telefoane.add(t3);
   }
 
-  @RequestMapping(value="/Telefon", method = RequestMethod.GET)
+  @RequestMapping(value="/telefon", method = RequestMethod.GET)
   public List<Telefon> index() {
     return this.telefoane;
   }
   
-  @RequestMapping(value="/Telefon", method = RequestMethod.POST)
+  @RequestMapping(value="/telefon", method = RequestMethod.POST)
   public ResponseEntity create() {
 	  Telefon t4 = new Telefon(4, "Asus");
 	  return new ResponseEntity<Telefon>(t4, new HttpHeaders(), HttpStatus.OK);
   }
 
-  @RequestMapping(value="/Telefon/{id}", method = RequestMethod.PUT)
+  @RequestMapping(value="/telefon/{id}", method = RequestMethod.PUT)
   public ResponseEntity update(@PathVariable("id") int id) {
     for(Telefon t : this.telefoane) {
       if(t.getId() == id) {
@@ -49,7 +50,7 @@ public class TelefonController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
   
-  @RequestMapping(value="/Telefon/{id}", method = RequestMethod.GET)
+  @RequestMapping(value="/telefon/{id}", method = RequestMethod.GET)
   public ResponseEntity show(@PathVariable("id") int id) {
     for(Telefon t : this.telefoane) {
       if(t.getId() == id) {
@@ -59,7 +60,8 @@ public class TelefonController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
 
-  @RequestMapping(value="/Telefon/{id}", method = RequestMethod.DELETE)
+
+  @RequestMapping(value="/telefon/{id}", method = RequestMethod.DELETE)
   public ResponseEntity remove(@PathVariable("id") int id) {
     for(Telefon t : this.telefoane) {
       if(t.getId() == id) {

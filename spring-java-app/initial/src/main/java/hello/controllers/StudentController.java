@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -26,18 +27,18 @@ public class StudentController {
     studenti.add(s3);
   }
 
-  @RequestMapping(value="/Student", method = RequestMethod.GET)
+  @RequestMapping(value="/student", method = RequestMethod.GET)
   public List<Student> index() {
     return this.studenti;
   }
   
-  @RequestMapping(value="/Student", method = RequestMethod.POST)
+  @RequestMapping(value="/student", method = RequestMethod.POST)
   public ResponseEntity create() {
 	  Student s4 = new Student(4, "Armand");
 	  return new ResponseEntity<Student>(s4, new HttpHeaders(), HttpStatus.OK);
   }
 
-  @RequestMapping(value="/Student/{id}", method = RequestMethod.PUT)
+  @RequestMapping(value="/student/{id}", method = RequestMethod.PUT)
   public ResponseEntity update(@PathVariable("id") int id) {
     for(Student s : this.studenti) {
       if(s.getId() == id) {
@@ -49,7 +50,7 @@ public class StudentController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
   
-  @RequestMapping(value="/Student/{id}", method = RequestMethod.GET)
+  @RequestMapping(value="/student/{id}", method = RequestMethod.GET)
   public ResponseEntity show(@PathVariable("id") int id) {
     for(Student s : this.studenti) {
       if(s.getId() == id) {
@@ -59,7 +60,7 @@ public class StudentController {
     return new ResponseEntity<String>(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
   }
 
-  @RequestMapping(value="/Student/{id}", method = RequestMethod.DELETE)
+  @RequestMapping(value="/student/{id}", method = RequestMethod.DELETE)
   public ResponseEntity remove(@PathVariable("id") int id) {
     for(Student s : this.studenti) {
       if(s.getId() == id) {
